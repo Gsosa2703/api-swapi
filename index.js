@@ -11,27 +11,37 @@ fetch(API)
     const titulo = document.getElementById('nombre').innerHTML += character.name;
     return character
 }).then(character => {
-    fetch(homeworld.homeworld).then(response =>{
+    fetch(character.homeworld).then(response => {
         return  response.json()
     }).then(response => {
         console.log(response.name)
-        const  parrafoHomworld = document.getElementById('homeworld').innerHTML += response.name;
+        document.getElementById('homeworld').innerHTML += response.name;
     }).catch(err => {
         console.error(err)
     })
-
     return character.starships
 }).then(starships => {
-    for ( let i = 0; i < starships.length; i++) {
-        fetch(starships[i]).then(response=> {
-            return response.json()
-        }).then(starship => {
-            console.log(starship)
-        }).catch(err => {
-            console.error(err)
-        })
+    if(starships.length === 0){
+        document.getElementById('titulo-starships').innerHTML = "This character doesnt have starships"
+    }else{
+        for ( let i = 0; i < starships.length; i++) {
+            fetch(starships[i]).then(response=> {
+                return response.json()
+            }).then(starship => {
+                renderStarships(starship)
+            }).catch(err => {
+                console.error(err)
+            })
+        }
     }
-    console.log(character.starships)
+
 }).catch(err => {
     console.error(err)
 })
+
+function renderStarships(starship){
+        let lista = [];
+        let starships = `<li> ${starship.name} </li>`
+        lista.push(starships)
+        document.getElementById('starships').innerHTML += lista;
+}
