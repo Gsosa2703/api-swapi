@@ -1,0 +1,26 @@
+body{
+    font-size: 18px;
+}
+
+form{
+    display:grid;
+    grid-template: 35px / 600px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+#search {
+    border-radius: 20px;
+    font-style: 20px;
+    text-align: center;
+    border:solid 1px black;
+
+}
+
+#button{
+    width: 18%;
+    text-align: center;
+
+}

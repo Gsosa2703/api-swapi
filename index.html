@@ -5,18 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API SWAPI</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <main class="container">
+
+        <h1>STAR WAR SWAPI</h1>
+        <!-- Search form -->
+        <form>
+            <input type="text" id="search" name="search" placeholder="Enter a number"><br>
+            <input type="button" value="Search" onclick="getIdCharacter()" id="button"class="btn-primary">
+        </form>
+
+    
 
     <section>
 
-        <h1 class="info">Star War Character:</h1>
-        <p id="nombre"> Name:</p>
+        <h1 class="character">Star War Character:</h1>
+        <p id="name"> Name:</p>
         <p id="homeworld"> Homeworld: </p>
         <h2 id="titulo-starships">Starships</h2>
         <ol id="starships"></ol>
+
     </section>
+
+
+
+    </main>
+       
+
     <script src="index.js"></script>
 </body>
 
